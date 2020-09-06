@@ -15,8 +15,7 @@ all:
   children:
     kube-master:
       hosts:
-        node1:
-        node2:
+        node3:
     kube-node:
       hosts:
         node1:
