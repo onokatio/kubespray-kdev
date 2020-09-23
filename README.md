@@ -144,7 +144,7 @@ Note: Upstart/SysV init based OS types are not supported.
   - [cni-plugins](https://github.com/containernetworking/plugins) v0.8.6
   - [calico](https://github.com/projectcalico/calico) v3.15.2
   - [canal](https://github.com/projectcalico/canal) (given calico/flannel versions)
-  - [cilium](https://github.com/cilium/cilium) v1.8.2
+  - [cilium](https://github.com/cilium/cilium) v1.8.3
   - [contiv](https://github.com/contiv/install) v1.2.1
   - [flanneld](https://github.com/coreos/flannel) v0.12.0
   - [kube-ovn](https://github.com/alauda/kube-ovn) v1.3.0
@@ -164,7 +164,7 @@ Note: The list of validated [docker versions](https://kubernetes.io/docs/setup/p
 
 ## Requirements
 
-- **Minimum required version of Kubernetes is v1.16**
+- **Minimum required version of Kubernetes is v1.17**
 - **Ansible v2.9+, Jinja 2.11+ and python-netaddr is installed on the machine that will run Ansible commands**
 - The target servers must have **access to the Internet** in order to pull docker images. Otherwise, additional configuration is required (See [Offline Environment](docs/offline-environment.md))
 - The target servers are configured to allow **IPv4 forwarding**.
