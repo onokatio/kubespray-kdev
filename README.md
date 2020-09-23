@@ -1,3 +1,22 @@
+- deploy from zero:
+
+```
+ansible-playbook -i inventory/mycluster/hosts.yaml --become --become-user=root cluster.yml
+```
+
+- upgrade(graceful)
+
+*Before upgrade, be sure using latest kubespray version (git pull upstream) *
+
+```
+ansible-playbook upgrade-cluster.yml -b -i inventory/mycluster/hosts.yaml -e kube_version=<version>
+```
+
+- upgrade(normal)
+
+simply rerun cluster.yaml with `kube_version` option
+
+
 # Deploy a Production Ready Kubernetes Cluster
 
 ![Kubernetes Logo](https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/docs/img/kubernetes-logo.png)
