@@ -32,7 +32,7 @@ download_container: true
 # local caching of docker images or for Flatcar Container Linux by Kinvolk cluster nodes.
 # Otherwise, uses the first node in the kube-master group to store images
 # in the download_run_once mode.
-download_localhost: true
+download_localhost: false
 
 # Always pull images if set to True. Otherwise check by the repo's tag/digest.
 download_always_pull: false
