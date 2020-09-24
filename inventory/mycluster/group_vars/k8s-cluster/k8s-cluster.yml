@@ -84,7 +84,7 @@ kube_users:
 kube_network_plugin: calico
 
 # Setting multi_networking to true will install Multus: https://github.com/intel/multus-cni
-kube_network_plugin_multus: false
+kube_network_plugin_multus: true
 
 # Kubernetes internal network for services, unused block of space.
 kube_service_addresses: 10.233.0.0/18
@@ -112,7 +112,7 @@ kube_proxy_mode: ipvs
 
 # configure arp_ignore and arp_announce to avoid answering ARP queries from kube-ipvs0 interface
 # must be set to true for MetalLB to work
-kube_proxy_strict_arp: false
+kube_proxy_strict_arp: true
 
 # A string slice of values which specify the addresses to use for NodePorts.
 # Values may be valid IP blocks (e.g. 1.2.3.0/24, 1.2.3.4/32).
@@ -141,7 +141,7 @@ cluster_name: cluster.local
 # Subdomains of DNS domain to be resolved via /etc/resolv.conf for hostnet pods
 ndots: 2
 # Can be coredns, coredns_dual, manual or none
-dns_mode: coredns
+dns_mode: coredns_dual
 # Set manual server if using a custom cluster DNS server
 # manual_dns_server: 10.x.x.x
 # Enable nodelocal dns cache
@@ -178,10 +178,10 @@ dns_domain: "{{ cluster_name }}"
 
 ## Container runtime
 ## docker for docker, crio for cri-o and containerd for containerd.
-container_manager: docker
+container_manager: containerd
 
 # Additional container runtimes
-kata_containers_enabled: false
+kata_containers_enabled: true
 
 ## Settings for containerd runtimes (only used when container_manager is set to containerd)
 #
@@ -224,7 +224,7 @@ k8s_image_pull_policy: IfNotPresent
 kubernetes_audit: false
 
 # dynamic kubelet configuration
-dynamic_kubelet_configuration: false
+dynamic_kubelet_configuration: true
 
 # define kubelet config dir for dynamic kubelet
 # kubelet_config_dir:
@@ -241,7 +241,7 @@ podsecuritypolicy_enabled: false
 # podsecuritypolicy_privileged_spec: {}
 
 # Make a copy of kubeconfig on the host that runs Ansible in {{ inventory_dir }}/artifacts
-# kubeconfig_localhost: false
+kubeconfig_localhost: false
 # Download kubectl onto the host that runs Ansible in {{ bin_dir }}
 # kubectl_localhost: false
 
