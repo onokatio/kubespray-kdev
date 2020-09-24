@@ -4,12 +4,12 @@
 ansible-playbook -i inventory/mycluster/hosts.yaml --become --become-user=root cluster.yml
 ```
 
-- upgrade(graceful)
+- upgrade to latest(graceful)
 
 *Before upgrade, be sure using latest kubespray version (git pull upstream) *
 
 ```
-ansible-playbook upgrade-cluster.yml -b -i inventory/mycluster/hosts.yaml -e kube_version=<version>
+ansible-playbook upgrade-cluster.yml -b -i inventory/mycluster/hosts.yaml
 ```
 
 - upgrade(normal)
