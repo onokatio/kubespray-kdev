@@ -12,22 +12,26 @@ all:
       ansible_host: 192.168.1.196
       ip: 192.168.1.196
       access_ip: 192.168.1.196
+    node4:
+      ansible_host: 192.168.1.197
+      ip: 192.168.1.197
+      access_ip: 192.168.1.197
   children:
     kube-master:
       hosts:
-        node1:
-        node2:
         node3:
+        node4:
     kube-node:
       hosts:
         node1:
         node2:
         node3:
+        node4:
     etcd:
       hosts:
-        node1:
         node2:
         node3:
+        node4:
     k8s-cluster:
       children:
         kube-master:
