@@ -31,7 +31,7 @@ local_release_dir: "/var/tmp/releases"
 download_cache_dir: "/var/tmp/kubespray_cache"
 # Random shifts for retrying failed ops like pushing/downloading
 retry_stagger: 5
-download_run_once: true
+download_run_once: false
 
 # This is the group that the cert creation scripts chgrp the
 # cert files to. Not really changeable...
