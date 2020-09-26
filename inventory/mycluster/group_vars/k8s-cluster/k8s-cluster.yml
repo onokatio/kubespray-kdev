@@ -28,8 +28,10 @@ kube_image_repo: "k8s.gcr.io"
 # Where the binaries will be downloaded.
 # Note: ensure that you've enough disk space (about 1G)
 local_release_dir: "/var/tmp/releases"
+download_cache_dir: "/var/tmp/kubespray_cache"
 # Random shifts for retrying failed ops like pushing/downloading
 retry_stagger: 5
+download_run_once: true
 
 # This is the group that the cert creation scripts chgrp the
 # cert files to. Not really changeable...
@@ -178,10 +180,11 @@ dns_domain: "{{ cluster_name }}"
 
 ## Container runtime
 ## docker for docker, crio for cri-o and containerd for containerd.
-container_manager: containerd
+container_manager: docker
 
 # Additional container runtimes
-kata_containers_enabled: true
+kata_containers_enabled: false # not supported with arm
+kata_containers_version: 1.11.3
 
 ## Settings for containerd runtimes (only used when container_manager is set to containerd)
 #
